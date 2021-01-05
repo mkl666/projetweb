@@ -1,6 +1,6 @@
 <?PHP
-include_once "../controller/animateurC.php";
-include_once "../models/animateur.php";
+include "../controller/animateurC.php";
+include "../models/animateur.php";
 
 $animateur1C=new animateurC();
 $animateurs=$animateur1C->recupereranimateurs();
@@ -102,49 +102,81 @@ $animateurs=$animateur1C->recupereranimateurs();
         <div class="table100 ver1">
           <div class="table100-firstcol">
           <table id="myTable" >
-                                        <thead>
-                                            <tr class="row100 head">
-                                                <th class="cell100 column1">ID</th>
-                                                <th class="cell100 column1">Nom</th>
-                                                <th class="cell100 column1">Prenom</th>
-                                                <th class="cell100 column1">Email</th>
-                                                <th class="cell100 column1">Telephone</th>
-                                                <th class="cell100 column1">Activite</th>
-                                                <th class="cell100 column1">Modifier</th>
-                                                <th class="cell100 column1">Supprimer</th>
-                                 
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php foreach ($animateurs as $row)
-                                     {
-                                    ?>
-                                    <tr class="row100 head">
-
-                                        <td class="cell100 column1"><?php echo $row["id"] ; ?></td>
-                                        <td class="cell100 column1"><?php echo $row["nom"] ; ?></a></td>
-                                        <td class="cell100 column1"><?php echo $row["prenom"] ; ?></a></td>
-                                        <td class="cell100 column1"><?php echo $row["email"] ; ?></td>
-                                        <td class="cell100 column1"><?php echo $row["telephone"] ; ?></td>
-                                        <td class="cell100 column1"><?php echo $row["activite"] ; ?></td>
-                                        <td class="cell100 column1"><a href="modifieranimateur.php?id=<?PHP echo $row['id']; ?>">Modifier</a></td>
-                                        <td>
-                                <form method="POST" action="supprimerAnimateur.php">
-                                
-                                <input type="hidden" value="<?PHP echo $row['id']; ?>" name="id">
-                                  <input type="submit" name="supprimer" value="Supprimer">
-                                    
-                                </form>
-                                
-                            </td>
-                            
                                        
-                                               
-                                          </tr>
-                                        
+   <tbody>
+   <fieldset>
+     <form method="post" action="animateur.php" >
+      <table border="1"> 
+              <tr>
+          <td rowspan="8" > Fiche Personelle</td>
+                  <td>
+                    <label> Nom : </label>
+                  </td>
+                  <td>
+                      <input type="text" name="nom" maxlength="20">
+                  </td>
+              </tr>
+  
+              <tr>
+                  <td >
+                      <label> Prénom : </label>
+                  </td>
+                  <td>
+                      <input type="text" name="prenom" maxlength="20">
+                  </td>
+              </tr>
+               <tr>
+                  <td >
+                      <label> Adresse mail: </label>
+                  </td>
+                  <td>
+                      <input type="email" id="email" name="email">
+                  </td>
+              </tr>
+  
+                 <tr>
+                  <td >
+                      <label> Téléphone: </label>
+                  </td>
+                  <td>
+                      <input type="tel" id="phone" name="telephone" placeholder="12-345-678" pattern="[0-9]{8}">
+                  </td>
+              </tr>
 
+              <tr>
+                  <td >
+                      <label> Activite : </label>
+                  </td>
+                  <td>
+                      <input type="radio" id="dance fitness" name="activite" value="dance fitness" >
+                      <label>dance fitness</label>
+                          <input type="radio" id="photobooth" name="activite" value="photobooth" >
+                      <label>photobooth</label>
+                      <input type="radio" id="fanfare" name="activite" value="fanfare" >
+                      <label>fanfare</label>
+                  </td>
+              </tr>
+  
+  <tr>
+          
+                 <tr>
+                  <td >
+                      
+                  </td>
+                  <td >
+                      
+                </td>
+                  <td>
+                      <button type="submit">  Participer</button>
+                  </td>
+                  >
+                  
+  
+              </tr> 
+              </tr></table></form> </fieldset>
+  
+                                            
                                     
-                                    <?php } ?>
                                         </tbody>
                                         
                                     </table>
