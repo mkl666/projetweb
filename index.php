@@ -1,3 +1,15 @@
+    <?php 
+    session_start();
+    if(!isset($_SESSION['username'])) {
+
+    header("Location: ./login.php");
+
+    exit;
+    }
+
+
+
+    ?>
 <!doctype html>
 <!--
 	Fox by FreeHTML5.co
@@ -33,12 +45,11 @@
       <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item"> <a class="nav-link" href="#">Home</a> </li>
-          <li class="nav-item"> <a class="nav-link" href="#about-us">About</a> </li>
-          <li class="nav-item"> <a class="nav-link" href="sign/index.html">SIGNUP</a> </li>
-                <li class="nav-item"> <a class="nav-link" href="sign/sigin.html">SIGNIN</a> </li>
-                <li class="nav-item"> <a class="nav-link" href="index.html">EVENEMENT</a> </li>
-
-          <li class="nav-item"> <a class="nav-link" href="#contact">Contact</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="inscription.php">SIGNUP</a> </li>
+                <li class="nav-item"> <a class="nav-link" href="login.php">SIGNIN</a> </li>
+                <li class="nav-item"> <a class="nav-link" href="planning.html">PLANNING</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="#contact">CONTACTEZ NOUS</a> </li>
+          
         </ul>
         <ul class="navbar-nav ml-5">
           <li class="nav-item"> <a class="nav-link btn btn-danger" href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a> </li>
